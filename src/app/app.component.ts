@@ -1,0 +1,92 @@
+import {Component} from '@angular/core';
+import { HeaderComponent, FooterComponent } from '@eo4geo/ngx-bok-utils';
+import { ReleaseNotesComponent } from './components/releaseNotes/releaseNotes.component';
+import { RouterOutlet } from '@angular/router';
+import { PdfService } from './services/pdf.service';
+import { MenuItem } from 'primeng/api';
+
+@Component({
+  standalone: true,
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+  imports: [RouterOutlet, ReleaseNotesComponent, HeaderComponent, FooterComponent],
+})
+export class AppComponent {
+  releaseNotes: boolean = false;
+
+  headerItems: MenuItem[] = [ 
+    {
+      label: 'Tools',
+      icon: 'pi pi-cog',
+      items: [
+        {
+          label: 'BoK Visualization & Search',
+          icon: 'pi pi-search',
+          style: {'--p-tieredmenu-item-color': 'var(--hover-color)'},
+          iconStyle: {'color': 'var(--hover-color)'}
+        },
+        {
+          label: 'Occupational Profile Tool',
+          icon: 'pi pi-users',
+          url: 'https://eo4geo-opt.web.app',
+        },
+        {
+          label: 'Job Offer Tool',
+          icon: 'pi pi-book',
+          url: 'https://eo4geo-jot.web.app',
+        },
+        {
+          label: 'Curriculum Design Tool',
+          icon: 'pi pi-sitemap',
+          url: 'https://eo4geo-cdt.web.app',
+        },
+        {
+          label: 'BoK Annotation Tool',
+          icon: 'pi pi-pencil',
+          url: 'https://eo4geo-bat.web.app',
+        },
+        {
+          label: 'BoK Matching Tool',
+          icon: 'pi pi-equals',
+          url: 'https://eo4geo-bmt.web.app',
+        }
+      ]
+    }, 
+    {
+      label: 'Share',
+      icon: 'pi pi-share-alt',
+      items: [
+        {
+          label: 'X',
+          icon: 'pi pi-twitter',
+          url: 'https://twitter.com/SpaceSUITE_eu',
+        },
+        {
+          label: 'Facebook',
+          icon: 'pi pi-facebook',
+          url: 'https://www.facebook.com/spacesuiteproject/',
+        },
+        {
+          label: 'Youtube',
+          icon: 'pi pi-youtube',
+          url: 'https://www.youtube.com/@SpaceSUITE_eu',
+        },
+        {
+          label: 'LinkedIn',
+          icon: 'pi pi-linkedin',
+          url: 'https://www.linkedin.com/showcase/spacesuite_eu/',
+        }
+      ]
+    }
+  ];
+
+  constructor(private pdfService: PdfService) {}
+
+  openPdf() {
+    this.pdfService.getPdf().subscribe(pdfBlob => {
+      const pdfUrl = URL.createObjectURL(pdfBlob);
+      window.open(pdfUrl, '_blank');
+    });
+  }
+}

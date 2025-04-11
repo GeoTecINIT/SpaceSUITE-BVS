@@ -1,0 +1,58 @@
+<p-dialog header="Release Notes" [modal]="true" [(visible)]="visible" (onHide)="visibleChange.emit(false)" [style]="{ width: '50rem', color: 'var(--primary-color)' }" [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }">
+    <h2>v7.0 - December 2024</h2>
+    <ul>
+        <li>Include BoK v7</li>
+        <li>Migrated to Angular 19</li>
+        <li>Redesigned the user interface</li>
+        <li>Applied SpaceSUITE project styles</li>
+    </ul>
+    
+    <h2>v6.0 - October 2021</h2>
+    <ul>
+        <li>Include BoK v6</li>
+    </ul>
+
+    <h2>v5.0 - February 2021</h2>
+    <ul>
+        <li>Include BoK v5</li>
+        <li>Add bullet points to lists and open links in new tab</li>
+    </ul>
+
+    <h2>v4.0 - October 2020</h2>
+    <ul>
+        <li>Added user manual and privacy policy links</li>
+        <li>Added license</li>
+        <li>Added similar to and prerequisite relations</li>
+        <li>Handle concepts with two parents</li>
+    </ul>
+
+    <h2>v3.0 - May 2020</h2>
+    <ul>
+        <li>Create npm package find-in-bok-dataviz</li>
+        <li>Added BoK versioning</li>
+    </ul>
+
+    <h2>v2.0 - March 2020</h2>
+    <ul>
+        <li>Added permalinks for concept resolving</li>
+        <li>Linked official subdomain</li>
+    </ul>
+
+    <h2>v1.1 - February 2020</h2>
+    <ul>
+        <li>Create npm package bok-dataviz</li>
+        <li>Read from JSON-LD instead of XML</li>
+    </ul>
+
+    <h2>v1.0 - April 2019</h2>
+    <ul>
+        <li>Cleaned duplicated relations</li>
+        <li>Added search by attributes</li>
+        <li>Added two letters concept codes</li>
+    </ul>
+
+    <h2>v0.1 - November 2018</h2>
+    <ul>
+        <li>First version displaying customxml from GIN2K BoK</li>
+    </ul>
+</p-dialog>
