@@ -1,6 +1,7 @@
 <div class="flex flex-column min-h-screen">
     <header [items]="headerItems" [login]="false"></header>
     <router-outlet></router-outlet>
-    <footer (openReleaseNotes)="releaseNotes = !releaseNotes" (openUserManual)="openPdf()" class="mt-auto"></footer>
+    <footer (openReleaseNotes)="releaseNotes = !releaseNotes" (openUserManual)="openPdf()" [copyright]="true" (openCopyright)="copyright = !copyright" class="mt-auto"></footer>
     <release-notes [(visible)]="releaseNotes"></release-notes>
+    <copyright [(visible)]="copyright"></copyright>
 </div>

@@ -4,16 +4,18 @@ import { ReleaseNotesComponent } from './components/releaseNotes/releaseNotes.co
 import { RouterOutlet } from '@angular/router';
 import { PdfService } from './services/pdf.service';
 import { MenuItem } from 'primeng/api';
+import { CopyrightComponent } from "./components/copyright/copyright.component";
 
 @Component({
   standalone: true,
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  imports: [RouterOutlet, ReleaseNotesComponent, HeaderComponent, FooterComponent],
+  imports: [RouterOutlet, ReleaseNotesComponent, HeaderComponent, FooterComponent, CopyrightComponent],
 })
 export class AppComponent {
   releaseNotes: boolean = false;
+  copyright: boolean = false;
 
   headerItems: MenuItem[] = [ 
     {
