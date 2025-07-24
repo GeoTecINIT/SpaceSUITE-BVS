@@ -1,0 +1,8 @@
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+  
+a:hover {
+    color: var(--hover-color);
+}
