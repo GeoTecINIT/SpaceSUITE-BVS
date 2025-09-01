@@ -52,7 +52,12 @@ export class AppComponent {
           label: 'BoK Matching Tool',
           icon: 'pi pi-equals',
           url: 'https://eo4geo-bmt.web.app',
-        }
+        },
+        {
+          label: 'Training Catalogue Tool',
+          icon: 'pi pi-graduation-cap',
+          url: 'https://spacesuite-project-tct.web.app/',
+        },
       ]
     }, 
     {
